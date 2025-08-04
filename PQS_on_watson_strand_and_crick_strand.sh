@@ -1,0 +1,4 @@
+computeMatrix reference-point --referencePoint center -b 2000 -a 2000 -R input1.plus_PQS.bed -S out1.ssG4_merge.flt.clean.rmDup.fwd.bigwig out1.ssG4_merge.flt.clean.rmDup.rev.bigwig --skipZeros -o matrix.mat.gz --numberOfProcessors 10 --missingDataAsZero --binSize 100 --sortRegions descend
+plotHeatmap -m matrix.mat.gz -out fwd_rev_on_plus_PQS.pdf --plotFileFormat pdf --colorMap YlOrRd --heatmapHeight 14 --heatmapWidth 2 --yMax 2.2 --zMax 6.3
+computeMatrix reference-point --referencePoint center -b 2000 -a 2000 -R input1.minus_PQS.bed -S out1.ssG4_merge.flt.clean.rmDup.fwd.bigwig out1.ssG4_merge.flt.clean.rmDup.rev.bigwig --skipZeros -o matrix1.mat.gz --numberOfProcessors 10 --missingDataAsZero --binSize 100 --sortRegions descend
+plotHeatmap -m matrix1.mat.gz -out fwd_rev_on_minus_PQS.pdf --plotFileFormat pdf --colorMap YlOrRd --heatmapHeight 14 --heatmapWidth 2 --yMax 2.2 --zMax 6.3
